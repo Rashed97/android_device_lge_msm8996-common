@@ -90,6 +90,13 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
+# Audio HAL
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
@@ -110,10 +117,13 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
     hwaddrs
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@3.2-impl \
     Snap
 
 # Charger
@@ -143,19 +153,36 @@ PRODUCT_PACKAGES += \
     hdmi_cec.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
+    libgenlock \
     liboverlay
+
+# Display HAL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl
 
 # Doze mode
 PRODUCT_PACKAGES += \
     LGDoze
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
+
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprintd
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
+
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
 
 # Gesture handler
 PRODUCT_PACKAGES += \
@@ -166,6 +193,10 @@ PRODUCT_PACKAGES += \
     gps.msm8996 \
     libgnsspps \
     libcurl
+
+# GPS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/flp.conf:system/etc/flp.conf \
@@ -198,9 +229,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8996
+    lights.msm8996 \
+    android.hardware.light@2.0-impl
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -217,8 +254,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
+
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl \
     com.android.nfc_extras \
     nfc_nci.msm8996 \
     NfcNci \
@@ -252,12 +294,17 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
     power.msm8996 \
     thermal.msm8996
 
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_msm8996
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -267,6 +314,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
     sensors.msm8996
 
 PRODUCT_COPY_FILES += \
@@ -285,7 +333,12 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service \
     com.android.future.usb.accessory
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # Virtual Reality
 PRODUCT_PACKAGES += \
@@ -293,6 +346,7 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
