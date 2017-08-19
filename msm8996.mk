@@ -191,7 +191,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8996 \
     libgnsspps \
-    libcurl
+    libcurl \
+    libshims_get_process_name
 
 # GPS HAL
 PRODUCT_PACKAGES += \
