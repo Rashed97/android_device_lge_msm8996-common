@@ -184,8 +184,8 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl
 
 # Gesture handler
-PRODUCT_PACKAGES += \
-    GestureHandler
+#PRODUCT_PACKAGES += \
+#    GestureHandler
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -211,9 +211,9 @@ PRODUCT_PACKAGES += \
     libshims_ims
 
 # IPACM
-PRODUCT_PACKAGES += \
-    IPACM_cfg.xml \
-    ipacm
+#PRODUCT_PACKAGES += \
+#    IPACM_cfg.xml \
+#    ipacm
 
 # IPv6
 PRODUCT_PACKAGES += \
