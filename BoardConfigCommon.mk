@@ -175,9 +175,6 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 #include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
-# Sensors
-USE_SENSOR_MULTI_HAL := true
-
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
