@@ -651,13 +651,13 @@ service imsqmidaemon /system/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
-    group radio net_raw log diag wakelock
+    group radio net_raw log qcom_diag wakelock
 
 service imsdatadaemon /system/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
-    group system wifi radio inet net_raw log diag net_admin
+    group system wifi radio inet net_raw log qcom_diag net_admin
     disabled
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
@@ -667,13 +667,13 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
     class main
     user system
     socket ims_rtpd stream 0660 system radio
-    group radio net_raw diag inet log
+    group radio net_raw qcom_diag inet log
     disabled
 
 service imscmservice /system/bin/imscmservice
     class main
     user system
-    group radio net_raw diag inet log
+    group radio net_raw qcom_diag inet log
     disabled
 
 on property:sys.ims.DATA_DAEMON_STATUS=1
@@ -704,7 +704,7 @@ service tftp_server /system/bin/tftp_server
 service ftmd /system/bin/ftmdaemon
     class late_start
     user root
-    group bluetooth net_bt_admin misc bluetooth diag net_bt
+    group bluetooth net_bt_admin misc net_bt_stack qcom_diag net_bt
     disabled
     oneshot
 
@@ -717,14 +717,14 @@ service port-bridge /system/bin/port-bridge
 service qmiproxy /system/bin/qmiproxy
     class main
     user radio
-    group radio diag
+    group radio qcom_diag
     disabled
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
     class main
     user radio
-    group radio audio bluetooth gps nfc diag
+    group radio audio bluetooth gps nfc qcom_diag
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /system/bin/netmgrd
@@ -736,7 +736,7 @@ service ipacm-diag /system/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
-    group net_admin diag
+    group net_admin qcom_diag
 
 service ipacm /system/bin/ipacm
     class main
@@ -747,7 +747,7 @@ service ipacm /system/bin/ipacm
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio net_raw diag usb net_admin
+    group radio net_raw qcom_diag usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
 service qcom-sh /system/bin/sh /init.qcom.sh
@@ -813,7 +813,7 @@ on property:netd.fstman.start=false
 service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet net_raw diag net_admin wifi
+    group gps inet net_raw qcom_diag net_admin wifi
     writepid /dev/cpuset/system-background/tasks
 
 on property:crypto.driver.load=1
@@ -871,7 +871,7 @@ service_redefine ril-daemon /system/bin/rild
     socket sap_uim_socket1 stream 660 bluetooth bluetooth
     socket rild-debug stream 660 radio system
     user root
-    group radio cache inet misc audio log readproc wakelock diag net_raw
+    group radio cache inet misc audio log readproc wakelock qcom_diag net_raw
 
 service ssr_diag /system/bin/ssr_diag
     class late_start
@@ -882,14 +882,14 @@ service ssr_diag /system/bin/ssr_diag
 service diag_mdlog_start /system/bin/diag_mdlog -n 20
     class late_start
     user shell
-    group system diag sdcard_rw sdcard_r media_rw
+    group system qcom_diag sdcard_rw sdcard_r media_rw
     disabled
     oneshot
 
 service diag_mdlog_stop /system/bin/diag_mdlog -k
     class late_start
     user shell
-    group system diag sdcard_rw sdcard_r media_rw
+    group system qcom_diag sdcard_rw sdcard_r media_rw
     disabled
     oneshot
 
