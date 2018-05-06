@@ -1,0 +1,2 @@
+type hal_lge_telephony_hwservice, hwservice_manager_type;
+type hal_lge_vssims_hwservice, hwservice_manager_type;

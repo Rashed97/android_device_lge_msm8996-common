@@ -1,0 +1,6 @@
+attribute hal_lge_telephony;
+attribute hal_lge_telephony_client;
+attribute hal_lge_telephony_server;
+attribute hal_lge_vssims;
+attribute hal_lge_vssims_client;
+attribute hal_lge_vssims_server;

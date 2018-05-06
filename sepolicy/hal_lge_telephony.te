@@ -1,0 +1,8 @@
+type hal_lge_telephony_default, domain;
+hal_server_domain(hal_lge_telephony_default, hal_lge_telephony)
+
+type hal_lge_telephony_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_lge_telephony_default)
+
+add_hwservice(hal_lge_telephony_server, hal_lge_telephony_hwservice)
+allow hal_lge_telephony_client hal_lge_telephony_hwservice:hwservice_manager find;
