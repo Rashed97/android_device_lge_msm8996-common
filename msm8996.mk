@@ -121,6 +121,11 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# Context Hub
+PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.0-impl \
+    android.hardware.contexthub@1.0-service
+
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \

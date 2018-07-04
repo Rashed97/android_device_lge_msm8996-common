@@ -87,6 +87,11 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
+# Context Hub
+lib64/libgnustl_shared.so:vendor/lib64/libgnustl_shared.so
+lib64/libnanohub_hal_stub.so:vendor/lib64/libnanohub_hal_stub.so
+vendor/lib64/hw/context_hub.default.so:vendor/lib64/hw/context_hub.msm8996.so
+
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libcppf.so
