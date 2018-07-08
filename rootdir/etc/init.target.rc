@@ -116,12 +116,6 @@ service qseecomd /vendor/bin/qseecomd
     user root
     group root
 
-service energy-awareness /vendor/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
-
 service perfd /vendor/bin/perfd
     class main
     user root
