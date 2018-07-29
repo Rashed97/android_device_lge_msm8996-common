@@ -420,6 +420,7 @@ lib64/libuicc.so
 lib64/vendor.lge.hardware.radio@1.0.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/rild
+vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
 vendor/bin/qti
 vendor/bin/rmt_storage

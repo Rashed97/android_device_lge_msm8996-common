@@ -754,22 +754,17 @@ service qmiproxy /system/bin/qmiproxy
     group radio oem_2901
     disabled
 
-# QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
-    class main
-    user radio
-    group radio audio bluetooth gps nfc oem_2901
+service atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /vendor/bin/netmgrd
     class main
+    user root
+    group root wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
-
-service ipacm-diag /vendor/bin/ipacm-diag
-    class main
-    user system
-    socket ipacm_log_file dgram 660 system net_admin
-    group net_admin oem_2901
 
 service ipacm /vendor/bin/ipacm
     class main
